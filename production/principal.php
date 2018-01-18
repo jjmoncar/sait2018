@@ -11,7 +11,7 @@
     <title>SAIT | UPTP-LMR </title>
 
     <?php
-    //***********Librerias del Sistema***********
+    //***********Librerias Externas Incluidas al Sistema***********
       include('lib/base/base.php');
     //*******************************************
     ?>
