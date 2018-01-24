@@ -13,7 +13,7 @@ class Usuarios{
         function insertar($campos){
             if($this->conex->con()==true){
                 //print_r($campos);
-                return pg_query("INSERT INTO usuario (cedula, usuario, clave, nivel, nombre, id_dpto) VALUES ('".$campos[0]."','".$campos[1]."','".$campos[2]."','".$campos[3]."','".$campos[4]."','".$campos[4]."')");
+                return pg_query("INSERT INTO usuario (cedula,nombre,usuario,clave,id_dpto,nivel,activo,categoria) VALUES ('".$campos[0]."','".$campos[1]."','".$campos[2]."','".$campos[3]."','".$campos[4]."','".$campos[5]."','".$campos[6]."','".$campos[7]."')");
             }
 	}
 
@@ -21,8 +21,8 @@ class Usuarios{
 		if($this->conex->con()==true){
                         //echo $id;
 			//print_r($campos);
-			return pg_query("UPDATE usuario SET cedula = '".$campos[0]."', usuario = '".$campos[1]."',"
-            . "clave = '".$campos[2]."', nivel = '".$campos[3]."',nombre = '".$campos[4]."',id_dpto = '".$campos[5]."',activo = '".$campos[6]."' WHERE id_usuario = '".$id."'");
+			return pg_query("UPDATE usuario SET cedula = '".$campos[0]."', nombre = '".$campos[1]."',"
+            . "usuario = '".$campos[2]."', clave = '".$campos[3]."',id_dpto = '".$campos[4]."',nivel = '".$campos[5]."',activo = '".$campos[6]."',categoria = '".$campos[7]."' WHERE id_usuario = '".$id."'");
 		}
 	}
         

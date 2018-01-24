@@ -32,7 +32,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form name="frmAcceso" id="frmAcceso" method="POST" action="#">
+            <form name="frmAcceso" id="frmAcceso" method="POST" action="production/lib/controller/logueo.php">
               <h1>Acceso</h1>
               <div>
                 <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" required autocomplete="off" />
@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required autocomplete="off" />
               </div>
               <div>
-                <input type="button" name="enviar" id="enviar" class="btn btn-lg btn-success btn-block" value="Entrar">
+                <button type="submit" name="enviar" id="enviar" class="btn btn-lg btn-success btn-block">Entrar</button>
               </div>
 
               <div class="clearfix"></div>
