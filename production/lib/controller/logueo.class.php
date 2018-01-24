@@ -1,3 +1,9 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <?php
 session_start();
 header("Content-type: text/html; charset=utf-8");
@@ -38,10 +44,15 @@ class Usuarios
             }
             else
                 {
-                   echo "<script type='text/javascript'>
-                    alert('Datos Erroneos!');
-                    window.location='../../../index.php';
-                  </script>";
+                   //echo "<script type='text/javascript'>
+                   // alert('Datos Erroneos!');
+                   // window.location='../../../index.php';
+                  //</script>";
+
+                    echo "<div class='alert alert-danger col-md-6 col-sm-6 col-xs-12'>
+                        <strong><h1>Error al Procesar los Datos!</h1></strong>
+                    </div>";
+                    header("Refresh: 3; URL=../../../index.php");
                 }
             }
         }
