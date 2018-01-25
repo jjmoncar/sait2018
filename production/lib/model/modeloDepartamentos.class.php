@@ -27,7 +27,7 @@ class Departamentos{
         
    function mostrar_departamentos(){
 		if($this->conex->con()==true){
-			return pg_query("SELECT * FROM departamento WHERE activo_dpto = 'true' order by departamento");
+			return pg_query("SELECT * FROM departamento WHERE activo_dpto = 't' order by id_dpto ASC");
 		}
 	}
 

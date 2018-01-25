@@ -17,7 +17,23 @@ $consulta=$obj->mostrar_usuarios();
             "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
         }
     });
-} );
+
+    // mostrar formulario de actualizar datos
+
+    $("table tr .modi a").click(function(){
+        $('#tablas').hide();
+        $("#contenedor").show();
+        $.ajax({
+            url: this.href,
+            type: "GET",
+            success: function(datos){
+                $("#contenedor").html(datos);
+            }
+        });
+        return false;
+    });
+
+});
 </script>
 
 <div class="col-md-12">
@@ -72,7 +88,7 @@ while ($datos=pg_fetch_array($consulta))
             <td><?php echo $nivel; ?></td>
             <td><?php echo $activo; ?></td>
             <td>
-                <span class="modi"><a href="../controller/usuarios_editar.php?id_usuario=<?php echo $datos["id_usuario"] ?>">
+                <span class="modi"><a href="../production/lib/controller/usuarios_editar.php?id_usuario=<?php echo $datos["id_usuario"] ?>">
                         <i class="fa fa-edit" aria-hidden="true" title="Editar Usuarios"></i></a></span>
             </td>
        	</tr>

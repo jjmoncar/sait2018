@@ -49,10 +49,10 @@ class Usuarios
                    // window.location='../../../index.php';
                   //</script>";
 
-                    echo "<div class='alert alert-danger col-md-6 col-sm-6 col-xs-12'>
-                        <strong><h1>Error al Procesar los Datos!</h1></strong>
+                    echo "<div class='alert alert-danger col-md-6 col-sm-6 col-xs-12 col-md-offset-3'>
+                        <strong><h1><center>Error al Procesar los Datos!</center></h1></strong>
                     </div>";
-                    header("Refresh: 3; URL=../../../index.php");
+                    header("Refresh: 2; URL=../../../index.php");
                 }
             }
         }

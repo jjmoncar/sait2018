@@ -82,7 +82,7 @@ include('../base/menu.php');
                         <div class="col-sm-9 col-sm-offset-3">
                             <br>
                             <input type="submit" id="enviar" name="enviar" class="btn btn-primary" value="Enviar">
-                            <input type="button" id="rgresar" name="regresar" class="btn btn-danger" value="Cancelar" onclick="history.back()">
+                            <input type="button" id="rgresar" name="regresar" class="btn btn-danger" value="Cancelar" onclick="$('#frmUsuarioAgregar').hide();">
                         </div>
                     </div>
                 </form>
