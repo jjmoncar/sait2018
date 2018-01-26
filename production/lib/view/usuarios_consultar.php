@@ -86,7 +86,15 @@ while ($datos=pg_fetch_array($consulta))
             <td><?php echo $nombre; ?></td>
             <td><?php echo $usuario; ?></td>
             <td><?php echo $nivel; ?></td>
-            <td><?php echo $activo; ?></td>
+            <td>
+                <?php 
+                    if($activo=='t'){
+                    echo strtoupper("activo");
+                    }else{
+                        echo strtoupper("inactivo");
+                    }
+                ?>
+            </td>
             <td>
                 <span class="modi"><a href="../production/lib/controller/usuarios_editar.php?id_usuario=<?php echo $datos["id_usuario"] ?>">
                         <i class="fa fa-edit" aria-hidden="true" title="Editar Usuarios"></i></a></span>

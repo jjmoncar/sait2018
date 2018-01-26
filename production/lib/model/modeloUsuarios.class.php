@@ -19,10 +19,10 @@ class Usuarios{
 
 	function actualizar($campos,$id){
 		if($this->conex->con()==true){
-                        //echo $id;
+            //echo $id;
 			//print_r($campos);
 			return pg_query("UPDATE usuario SET cedula = '".$campos[0]."', nombre = '".$campos[1]."',"
-            . "usuario = '".$campos[2]."', clave = '".$campos[3]."',id_dpto = '".$campos[4]."',nivel = '".$campos[5]."',activo = '".$campos[6]."',categoria = '".$campos[7]."' WHERE id_usuario = '".$id."'");
+            . "usuario = '".$campos[2]."', clave = '".$campos[3]."',id_dpto = '".$campos[4]."',nivel = '".$campos[5]."',activo = '".$campos[6]."',categoria = ".$campos[7]." WHERE id_usuario = '".$id."'");
 		}
 	}
         

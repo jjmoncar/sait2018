@@ -21,13 +21,14 @@ $usua = pg_fetch_array($consulta);
                 <div class="page-header">
                     <h2>Editar Usuarios</h2>
                 </div>
-                <form id="frmUsuariosEditar" class="form-horizontal" method="POST" action="usuarios_editarData.php">
-                    <input type="hidden" name="usuario" id="usuario" value="<?php echo $usua['id_usuario'] ?>">
+                <form id="frmUsuariosEditar" class="form-horizontal" method="POST" action="lib/controller/usuarios_editarData.php">
+                    <input type="hidden" name="usuario" id="usuario" value="<?php echo trim($usua['id_usuario']) ?>">
+                    <input type="hidden" name="user" id="user" value="<?php echo trim($usua['usuario']) ?>">
                     
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Cedula:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="cedula" id="cedula" maxlength="12" autocomplete="off" placeholder="Ej. 154785369" value="<?php echo $usua['cedula'] ?>" required>
+                            <input type="text" class="form-control" name="cedula" id="cedula" maxlength="12" autocomplete="off" placeholder="Ej. 154785369" value="<?php echo trim($usua['cedula']) ?>" required>
                         </div>
                     </div>
 
@@ -102,6 +103,13 @@ $usua = pg_fetch_array($consulta);
                                 echo "<input type='text' class='form-control' name='estatus' id='estatus' readonly value='$valorEstatus'>";
                             }
                             ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Categoria:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="categoria" id="categoria" min="0" max="3" autocomplete="off" placeholder="Ej. 1 - 3" value="<?php echo $usua['categoria'] ?>">
                         </div>
                     </div>
                     
