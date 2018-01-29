@@ -21,11 +21,25 @@ $consulta=$obj->mostrar_usuarios();
     // mostrar formulario de actualizar datos
 
     $("table tr .modi a").click(function(){
-        $('#tablas').hide();
+        //$('#tablas').hide();
         $("#contenedor").show();
         $.ajax({
             url: this.href,
             type: "GET",
+            success: function(datos){
+                $("#contenedor").html(datos);
+            }
+        });
+        return false;
+    });
+
+    //llamar a formulario nuevo
+
+    $("#nuevo").click(function(){
+
+        $.ajax({
+            type: "GET",
+            url: this.href,
             success: function(datos){
                 $("#contenedor").html(datos);
             }
@@ -49,8 +63,8 @@ $consulta=$obj->mostrar_usuarios();
     <center><h3><b>Usuarios</b></h3></center>
         <tr>
             <th>
-                <span class='modi'>
-                    <a href='usuarios_agregar.php'>
+                <span class='modi' id="nuevo">
+                    <a href='lib/view/usuarios_agregar.php'>
                         <i class='fa fa-save' aria-hidden='true' title='Agregar Usuarios'></i>
                     </a>
                 </span>
