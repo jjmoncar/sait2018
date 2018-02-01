@@ -28,7 +28,7 @@ include("../base/base.php");
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Nombres:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej. Pedro Perez" autocomplete="off" data-msg="Nombre de usuario Requerido">
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej. Pedro Perez" autocomplete="off">
                         </div>
                     </div>
 
@@ -112,10 +112,27 @@ include("../base/base.php");
     </div>
 
 <script>
+    //Revisar la codificacion de la validacion de este formulario. No esta validando
+    /* Incluimos un método para validar los campos nombre y apellido */
+    jQuery.validator.addMethod("nombre", function(value, element) {
+        return this.optional(element) || /^[A-Za-záéóóúàèìòùäëïöüñÑ\s]+$/i.test(value);
+    });
+
             $("#frmUsuarioAgregar").validate({
 
                 rules: {
-
+                    cedula:{
+                        required: true,
+                        number: true,
+                        minlength: 6,
+                        maxlength:8
+                    },
+                    nombre:{
+                        required: true,
+                        nombre: true,
+                        minlength: 3,
+                        maxlength: 30
+                    },
                     usuario:{
                         required: true
                     },
@@ -130,6 +147,16 @@ include("../base/base.php");
                     }
                 },
                 messages: {
+                    cedula:{
+                        number:"Este campo solo acepta Numeros",
+                        minlength: "Minimo 6 caracteres",
+                        maxlength: "Maximo 8 caracteres"
+                    },
+                    nombre{
+                        nombre:"Solo Puede Ingresar Letras",
+                        minlength:"Minimo 3 Caracteres",
+                        maxlength: "Maximo 30 Caracteres"
+                    },
                     pass: {
                         required:"Campo Requerido", 
                         minlength:"Minimo 6 caracteres", 
